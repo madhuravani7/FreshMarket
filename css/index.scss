@@ -14,6 +14,7 @@
 
 $green: #38b000;
 $black: #222;
+$bg: #92cd9e;
 $logotext: #004b23;
 $white: #fff;
 $lightcolor: #666;
@@ -276,6 +277,158 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     display: none;
 }
 
+@keyframes fadeLeft{
+    0%{
+        transform: translateX(-5rem);
+        opacity: 0;
+    }
+}
+@keyframes fadeUp{
+    0%{
+        transform: scale(.5);
+        opacity: 0;
+    }
+}
+
+
+.home{
+    padding-top: 14rem;
+    background: $bg;
+    position: relative;
+
+   .slides-container{
+       
+       .slide{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        display: none;
+
+        &.active{
+            display: flex;
+        }
+
+        .content{
+            flex: 1 1 40rem;
+            animation: fadeLeft .4s linear .4s backwards;
+
+            span{
+                color: $logotext;
+                font-size: 2.5rem;
+            }
+
+            h3{
+                font-size: 6rem;
+                color: $logotext;
+                padding: .5rem 0;
+            }
+        }
+
+        .image{
+            flex: 1 1 40rem;
+            margin: 3rem 0;
+
+            img{
+                width: 100%; 
+                
+                animation: fadeUp .4s linear;
+                
+                
+            }
+        }
+       }
+
+   }
+
+   #next-slide, #prev-slide{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: $box-shadow;
+    text-align: center;
+    background: $white;
+    font-size: 2rem;
+    color: $logotext;
+    cursor: pointer;
+
+    &:hover{
+        background: $green;
+        color: $white;
+    }
+   }
+
+   #prev-slide{
+    left: 2rem;
+   }
+   #next-slide{
+    right: 2rem;
+   }
+}
+
+
+.banner-container{
+    @include grid(32rem);
+
+    .banner{
+        position: relative;
+        height: 25rem;
+        overflow: hidden;
+
+        &:hover{
+            img{
+                transform: scale(1.2);
+            }
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            
+        }
+        .content{
+            position: absolute;
+            top: 50%; left: 2rem;
+            transform: translateY(-20%);
+
+            span{
+                color: $white;
+                font-size: 1.5rem;
+            }
+            h3{
+                font-size: 2rem;
+                padding-top: .5rem;
+                color: $white;
+            }
+
+            .btn{
+                padding: .8rem 2.5rem;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .footer{
@@ -337,9 +490,9 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 
 .credit{
     text-align: center;
-    background: $green;
+    background: $bg;
     font-size: 1.5rem;
-    color: $white;
+    color: $logotext;
 
 }
 
@@ -445,10 +598,22 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
                 border-radius: .5rem;
             }
         }
+
     }
     section{
         padding: 3rem 2rem;
     }
+
+    .home #next-slide, .home #prev-slide{
+        transform: translateY(0);
+        top: 88%;
+    }
+
+    .home #prev-slide{
+        left: auto;
+        right: 8rem;
+    }
+
 }
 
 
@@ -458,5 +623,18 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     html{
         font-size: 55%;
     }
+    .header{
+        .icons{
+            display: flex;
+            flex-direction: row;
+            font-size: 0.5rem;
+        }
+    }
+
+    .home .slides-container .slide .content h3{
+        font-size: 5rem;
+    }
+
+
     
 }
