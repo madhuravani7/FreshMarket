@@ -563,8 +563,83 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     }    
 }
 
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 
+    .image{
+        flex: 1 1 40rem;
 
+        img{
+            width: 100%;
+        }
+    }
+    .content{
+        flex: 1 1 40rem;
+
+        span{
+            color: $logotext;
+            font-size: 2.5rem;    
+        }
+        h3{
+            color: $logotext;
+            font-size: 3rem;  
+            padding-top: .5rem;  
+        }
+        p{
+            columns: $lightcolor;
+            font-size: 1.4rem;
+            line-height: 2;
+            padding: 1rem 0;
+        }
+    }
+}
+
+.gallery .box-container{
+    @include grid(30rem);
+
+    .box{
+        height: 25rem;
+        overflow: hidden;
+        position: relative;
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            &:hover img{
+                transform: scale(1.1);
+            }
+        }
+        &:hover .icons{
+            bottom: 0;
+        }
+        .icons{
+            text-align: center;
+            background: $bg;
+            padding: 1.5rem 0;
+            position: absolute;
+            bottom: -6rem; left: 0; right: 0;
+            z-index: 10;
+
+            a{
+                font-size: 1.5rem;
+                color: $white;
+                margin: 0 1.5rem;
+                
+                &:hover{
+                    color: $logotext;
+                }
+            }
+
+        }
+        
+
+    }
+}
 
 
 
