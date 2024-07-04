@@ -705,6 +705,67 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     }
 }
 
+.blogs .box-container{
+    @include grid(30rem);
+
+    .box{
+        border: $border;
+
+        &:hover .image img{
+            transform: scale(1.2);
+        }
+
+        .image{
+            height: 25rem;
+            width: 100%;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .content{
+            padding: 2rem 1.5rem;
+
+            .icons{
+                border-bottom: $border;
+                padding-bottom: 1.7rem;
+                margin-bottom: 1.7rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                a{
+                    font-size: 1.4rem;
+                    color: $lightcolor;
+
+                    &:hover{
+                        color: $green;
+                    }
+
+                    i{
+                        color: $green;
+                        padding-right: .5rem;
+                    }
+                }
+            }
+            h3{
+                font-size: 1.7rem;
+                color: $logotext;
+            }
+
+            p{
+                font-size: 1.2rem;
+                color: $logotext;
+                line-height: 1.5rem;
+            }
+
+            
+        }
+    }
+}
 
 
 

@@ -605,6 +605,60 @@ section {
   line-height: 2;
 }
 
+.blogs .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.blogs .box-container .box {
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+.blogs .box-container .box:hover .image img {
+  transform: scale(1.2);
+}
+.blogs .box-container .box .image {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.blogs .box-container .box .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blogs .box-container .box .content {
+  padding: 2rem 1.5rem;
+}
+.blogs .box-container .box .content .icons {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1.7rem;
+  margin-bottom: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blogs .box-container .box .content .icons a {
+  font-size: 1.4rem;
+  color: #666;
+}
+.blogs .box-container .box .content .icons a:hover {
+  color: #38b000;
+}
+.blogs .box-container .box .content .icons a i {
+  color: #38b000;
+  padding-right: 0.5rem;
+}
+.blogs .box-container .box .content h3 {
+  font-size: 1.7rem;
+  color: #004b23;
+}
+.blogs .box-container .box .content p {
+  font-size: 1.2rem;
+  color: #004b23;
+  line-height: 1.5rem;
+}
+
 .footer {
   background: #f3f3f3;
 }
